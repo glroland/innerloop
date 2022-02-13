@@ -12,7 +12,7 @@ Assuming that the following are already installed:
 
 Start.spring.io
 	- Create a basic rest service
-	- Jersey as a dependency
+	- spring web as a dependency
 Decompress
 
 Create project in github (empty, Java)
@@ -28,20 +28,22 @@ Oc project innerloop
 
 
 # 
-# ADD AND USE
+# ADD SERVICE
 # 
 
  odo create java-springboot innerloop 
  odo push
 
- open url and it should show the old tomcat style not found page
- http://8080-tcp-app-innerloop.apps.ocp4.home.glroland.com/
+open url and see a not found error
+curl http://8080-tcp-app-innerloop.apps.ocp4.home.glroland.com/
+{"timestamp":"2022-02-13T16:42:56.446+00:00","status":404,"error":"Not Found","path":"/"}%               
 
  add a rest operation that says hello
- --sample operation is in this project under Hello Resource
+ --sample operation is in this project under Hello controller
 
  odo push
 
  open url again
  http://8080-tcp-app-innerloop.apps.ocp4.home.glroland.com/
+result should say hello
 
